@@ -34,6 +34,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.exoplayer2.C;
 import com.google.android.exoplayer2.ExoPlaybackException;
 import com.google.android.exoplayer2.PlaybackParameters;
@@ -209,6 +210,7 @@ public final class SimpleExoPlayerView extends FrameLayout {
   private final View shutterView;
   private final View surfaceView;
   private final ImageView artworkView;
+  private final ImageView coverView;
   private final SubtitleView subtitleView;
   private final PlaybackControlView controller;
   private final ComponentListener componentListener;
@@ -238,6 +240,7 @@ public final class SimpleExoPlayerView extends FrameLayout {
       shutterView = null;
       surfaceView = null;
       artworkView = null;
+      coverView = null;
       subtitleView = null;
       controller = null;
       componentListener = null;
@@ -325,6 +328,9 @@ public final class SimpleExoPlayerView extends FrameLayout {
       subtitleView.setUserDefaultStyle();
       subtitleView.setUserDefaultTextSize();
     }
+
+    //cover view
+    coverView = (ImageView) findViewById(R.id.cover_view);
 
     // Playback control view.
     PlaybackControlView customController = (PlaybackControlView) findViewById(R.id.exo_controller);
@@ -907,6 +913,8 @@ public final class SimpleExoPlayerView extends FrameLayout {
 
     @Override
     public void onPlayerStateChanged(boolean playWhenReady, int playbackState) {
+      //隐藏封面
+      coverView.setVisibility(GONE);
       maybeShowController(false);
     }
 
@@ -937,4 +945,14 @@ public final class SimpleExoPlayerView extends FrameLayout {
 
   }
 
+  ///////////////////////////////////////////////////////////////////////////
+  // 新增方法
+  ///////////////////////////////////////////////////////////////////////////
+
+  public void setCoverView(String url) {
+    coverView.setVisibility(VISIBLE);
+    Glide.with(getContext())
+            .load(url)
+            .into(coverView);
+  }
 }

@@ -5,5 +5,6 @@ package com.tony.exoplayerdemo;
  */
 
 public interface ExoplayerLog {
+    boolean DEBUG = true;
     String TAG = "exoplayer2";
 }

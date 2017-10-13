@@ -8,7 +8,7 @@
         android:id="@+id/media_url_txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="http://d20lah0axwiuc.cloudfront.net/compress/aws_150771407419781.mp4" />
+        android:text="http://video.miuapp.com/video/20170807/2/1206066_95de71407a7c203dc4e9a8cde57f00af.mp4" />
 
     <Button
         android:layout_width="wrap_content"

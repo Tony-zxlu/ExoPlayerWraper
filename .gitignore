@@ -52,3 +52,5 @@ DBMessageListDao.java
 ExoPlayerDemo.iml
 ExoPlayerWraper.iml
 gradle/
+.gradle/
+/.gradle/

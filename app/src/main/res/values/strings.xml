@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ExoPlayerDemo</string>
+    <string name="app_name">ExoPlayerWraper</string>
     <string name="exo_controls_previous_description">Previous track</string>
     <string name="exo_controls_next_description">Next track</string>
     <string name="exo_controls_pause_description">Pause</string>
